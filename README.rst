@@ -1,19 +1,54 @@
-===================================
-Add new options for many2one field:
-===================================
+==================================
+Add new options for many2one field
+==================================
 
-- create: true/false -> disable "create" entry in dropdown panel 
-- create_edit: true/false -> disable "create and edit" entry in dropdown panel
-- limit: 10 (int) -> change number of selected record return in dropdown panel
-- m2o_dialog: true/false -> disable quick create M20Dialog triggered on error.
 
-Example:
---------
+Description
+-----------
 
-<field name="partner_id" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+This modules modifies "many2one" form fields so as to add some new display
+control options.
 
-Note:
------
+Options provided includes possibility to remove "Create..." and/or "Create and
+Edit..." entries from many2one drop down. You can also change default number of
+proposition appearing in the drop-down. Or prevent the dialog box poping in
+case of validation error.
 
-if one of those options are not set, many2one field use default many2one field options.
+Please note that the default behavior of this module is to match the default
+OpenERP behavior.
+
+
+Requirements
+------------
+
+Was tested on openerp v7.0
+
+
+New option
+----------
+
+``create`` *boolean* (Default: ``true``)
+
+  Whether to display the "Create..." entry in dropdown panel.
+
+``create_edit`` *boolean* (Default: ``true``)
+
+  Whether to display "Create and Edit..." entry in dropdown panel
+
+``limit`` *int* (Default: openerp default value is ``7``)
+
+  Number of displayed record in drop-down panel
+
+``m2o_dialog`` *boolean* (Default: ``True``)
+
+  Whether to display the many2one dialog in case of validation error.
+
+Example
+-------
+
+Your XML form view definition could contain::
+
+    ...
+    <field name="partner_id" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+    ...
 
