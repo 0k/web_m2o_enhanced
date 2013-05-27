@@ -11,7 +11,7 @@ openerp.web_m2o_enhanced = function (instance) {
     instance.web.form.FieldMany2One = instance.web.form.FieldMany2One.extend({
 
         show_error_displayer: function () {
-            if (this.options.m2o_dialog === undefined ||
+            if (typeof this.options.m2o_dialog === 'undefined' ||
                 this.options.m2o_dialog) {
                 new instance.web.form.M2ODialog(this).open();
             }
@@ -23,10 +23,10 @@ openerp.web_m2o_enhanced = function (instance) {
             // add options limit used to change number of selections record
             // returned.
 
-            if (self.options.limit !== undefined &&
-                self.options.limit === 'number') {
-                this.limit = self.options.limit;
+            if (typeof this.options.limit === 'number') {
+                this.limit = this.options.limit;
             }
+
             var dataset = new instance.web.DataSet(this, this.field.relation,
                                                    self.build_context());
             var blacklist = this.get_search_blacklist();
@@ -73,7 +73,7 @@ openerp.web_m2o_enhanced = function (instance) {
                         return x[1];
                     });
 
-                    if (self.options.create === undefined ||
+                    if (typeof self.options.create === 'undefined' ||
                         self.options.create) {
 
                         if (search_val.length > 0 &&
@@ -93,7 +93,7 @@ openerp.web_m2o_enhanced = function (instance) {
 
                     // create...
 
-                    if (self.options.create_edit === undefined ||
+                    if (typeof self.options.create_edit === 'undefined' ||
                         self.options.create_edit) {
 
                         values.push({
