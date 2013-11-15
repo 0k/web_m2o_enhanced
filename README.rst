@@ -9,6 +9,8 @@ Description
 This modules modifies "many2one" form fields so as to add some new display
 control options.
 
+**New: support many2manytags widget ! **
+
 Options provided includes possibility to remove "Create..." and/or "Create and
 Edit..." entries from many2one drop down. You can also change default number of
 proposition appearing in the drop-down. Or prevent the dialog box poping in

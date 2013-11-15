@@ -5,9 +5,9 @@
     "version": "0.1",
     "description":
 """
-===================================
-Add new options for many2one field:
-===================================
+=====================================================
+Add new options for many2one and many2manytags field:
+=====================================================
 
 - create: true/false -> disable "create" entry in dropdown panel
 - create_edit: true/false -> disable "create and edit" entry in dropdown panel
