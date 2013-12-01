@@ -9,6 +9,8 @@ Description
 This modules modifies "many2one" form fields so as to add some new display
 control options.
 
+**New: support many2manytags widget ! **
+
 Options provided includes possibility to remove "Create..." and/or "Create and
 Edit..." entries from many2one drop down. You can also change default number of
 proposition appearing in the drop-down. Or prevent the dialog box poping in
@@ -52,4 +54,10 @@ Your XML form view definition could contain::
     ...
     <field name="partner_id" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
     ...
+
+Note
+----
+
+Double check that you have no inherited view that remote ``options`` you set on a field ! 
+If nothing work, add a debugger in the first ligne of ``get_search_result method`` and enable debug mode in OpenERP. When you write something in a many2one field, javascript debugger should pause. If not verify your installation.
 
