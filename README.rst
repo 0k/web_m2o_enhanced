@@ -2,6 +2,10 @@
 Add new options for many2one field
 ==================================
 
+Change
+------
+
+web_m2o_enhanced is now https://github.com/0k/web_m2x_options and support odoo v8.0 (see odoo/8.0 branch)
 
 Description
 -----------
